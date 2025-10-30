@@ -39,7 +39,8 @@
             genderRB = new RadioButton();
             ageNum = new NumericUpDown();
             speciesCombo = new ComboBox();
-            addButton = new Button();
+            okButton = new Button();
+            cancelButton = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)weightNum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ageNum).BeginInit();
@@ -172,22 +173,34 @@
             speciesCombo.Size = new Size(151, 28);
             speciesCombo.TabIndex = 9;
             // 
-            // addButton
+            // okButton
             // 
-            addButton.Location = new Point(220, 415);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(94, 29);
-            addButton.TabIndex = 1;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
-            addButton.Click += addButton_Click;
+            okButton.DialogResult = DialogResult.OK;
+            okButton.Location = new Point(338, 414);
+            okButton.Name = "okButton";
+            okButton.Size = new Size(94, 29);
+            okButton.TabIndex = 1;
+            okButton.Text = "Ok";
+            okButton.UseVisualStyleBackColor = true;
+            okButton.Click += okButton_Click;
+            // 
+            // cancelButton
+            // 
+            cancelButton.DialogResult = DialogResult.Cancel;
+            cancelButton.Location = new Point(91, 414);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(94, 29);
+            cancelButton.TabIndex = 2;
+            cancelButton.Text = "Cancel";
+            cancelButton.UseVisualStyleBackColor = true;
             // 
             // AddPet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(516, 479);
-            Controls.Add(addButton);
+            Controls.Add(cancelButton);
+            Controls.Add(okButton);
             Controls.Add(tableLayoutPanel1);
             Name = "AddPet";
             Text = "AddPet";
@@ -211,6 +224,7 @@
         private RadioButton genderRB;
         private NumericUpDown ageNum;
         private ComboBox speciesCombo;
-        private Button addButton;
+        private Button okButton;
+        private Button cancelButton;
     }
 }

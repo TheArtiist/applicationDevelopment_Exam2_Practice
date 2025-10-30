@@ -17,7 +17,7 @@ namespace zhFelkeszito2.View
             InitializeComponent();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             if(nameTB.Text.Equals("") || genderRB.Text.Equals("") 
                 || ageNum.Value < 0 || weightNum.Value < 0 || speciesCombo.Text.Equals(""))
