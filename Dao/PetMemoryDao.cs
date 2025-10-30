@@ -29,7 +29,7 @@ namespace zhFelkeszito2.Dao
 
         public IEnumerable<Pet> GetAllPets()
         {
-            throw new NotImplementedException();
+            return this.list;
         }
 
         public bool UpdatePet(Pet pet)
