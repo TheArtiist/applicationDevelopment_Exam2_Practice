@@ -34,7 +34,15 @@ namespace zhFelkeszito2.Dao
 
         public bool UpdatePet(Pet pet)
         {
-            throw new NotImplementedException();
+            int index = list.IndexOf(list.FirstOrDefault(x => x.Id == pet.Id));
+
+            if (index == -1) 
+            {
+                return false;
+            }
+            list[index] = pet;
+            return true;
+
         }
     }
 }
