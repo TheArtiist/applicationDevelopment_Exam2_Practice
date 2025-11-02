@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IdGen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,8 @@ namespace zhFelkeszito2.View
                 var msg = MessageBox.Show("Nem maradhat üresen mező","Hiba!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            var generator = new IdGenerator(0);
+            var id = generator.CreateId();
             string tmpName = nameTB.Text;
             bool ischecked = genderRB.Checked;
             int tmpAge = (int)ageNum.Value;
@@ -37,11 +40,11 @@ namespace zhFelkeszito2.View
             Pet pet;
             if (ischecked)
             {
-                pet = new Pet(tmpName, true, tmpAge,tmpWeight,tmpSpecies); 
+                pet = new Pet(id,tmpName, true, tmpAge,tmpWeight,tmpSpecies); 
             }
             else
             {
-                pet = new Pet(tmpName, false, tmpAge, tmpWeight, tmpSpecies);
+                pet = new Pet(id,tmpName, false, tmpAge, tmpWeight, tmpSpecies);
             }
 
             if (!_petController.AddPet(pet))

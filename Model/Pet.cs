@@ -11,26 +11,21 @@ namespace zhFelkeszito2.Model
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public string gender { get; set; }
+        public bool gender { get; set; }
         public int age { get; set; }
-        public double weight { get; set; }
+        public int weight { get; set; }
         public string species { get; set; }
 
-        public Pet(string name, bool gender, int age, double weight, string species)
+        public Pet(double id,string name, bool gender, int age, int weight, string species)
         {
+            
+            
             var generator = new IdGenerator(0);
-            var id = generator.CreateId();
-            this.Id = (int)id;
+            var idd = generator.CreateId();
             this.name = name;
-            if (gender)
-            {
-                this.gender = "nőstény";
-            }
-            else
-            {
-                this.gender = "hím";
-            }
-                this.age = age;
+            this.Id = (int)id+(int)idd;
+            this.gender = gender;
+            this.age = age;
             this.weight = weight;
             this.species = species;
 
